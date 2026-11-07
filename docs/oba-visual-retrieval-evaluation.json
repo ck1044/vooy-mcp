@@ -1,0 +1,676 @@
+{
+  "threshold_applied": false,
+  "description": "직접 이미지 벡터의 상위 후보 점수; no_match 판정은 수행하지 않음",
+  "splits": {
+    "dev": {
+      "questions": 6,
+      "visual_match_questions": 4,
+      "hit_at_3_count": 4,
+      "hit_at_3": 1.0,
+      "visual_no_match_questions": 2,
+      "negative_questions_returning_candidates_without_threshold": 2
+    },
+    "test": {
+      "questions": 18,
+      "visual_match_questions": 13,
+      "hit_at_3_count": 13,
+      "hit_at_3": 1.0,
+      "visual_no_match_questions": 5,
+      "negative_questions_returning_candidates_without_threshold": 5
+    }
+  },
+  "results": [
+    {
+      "question_id": "dev-01",
+      "split": "dev",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-313e1d1d8adbb6dd",
+          "cosine_distance": 0.3027167681117974,
+          "cosine_similarity": 0.6972832318882026,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-2f9982f85602dcfc",
+          "cosine_distance": 0.34996438026427756,
+          "cosine_similarity": 0.6500356197357224,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-6c050eafb02e8f56",
+          "cosine_distance": 0.3548906233971836,
+          "cosine_similarity": 0.6451093766028164,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "dev-03",
+      "split": "dev",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-2eb961ee7bd2b7f1",
+          "cosine_distance": 0.26049506664276123,
+          "cosine_similarity": 0.7395049333572388,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-52cdbe0ab1b950d6",
+          "cosine_distance": 0.3594014644622803,
+          "cosine_similarity": 0.6405985355377197,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-1d5460c1afd88f23",
+          "cosine_distance": 0.37153706720250335,
+          "cosine_similarity": 0.6284629327974967,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "dev-04",
+      "split": "dev",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-2f9982f85602dcfc",
+          "cosine_distance": 0.2768190072070845,
+          "cosine_similarity": 0.7231809927929155,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-313e1d1d8adbb6dd",
+          "cosine_distance": 0.32892644326563536,
+          "cosine_similarity": 0.6710735567343646,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-74f52d9aeeda1a74",
+          "cosine_distance": 0.3329615592291747,
+          "cosine_similarity": 0.6670384407708253,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "dev-06",
+      "split": "dev",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-3a6c6b46fa5855b6",
+          "cosine_distance": 0.35948900225823077,
+          "cosine_similarity": 0.6405109977417692,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-1d5460c1afd88f23",
+          "cosine_distance": 0.3987376093864399,
+          "cosine_similarity": 0.6012623906135601,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-4a66359fe24a45b4",
+          "cosine_distance": 0.40235995082377807,
+          "cosine_similarity": 0.5976400491762219,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "dev-09",
+      "split": "dev",
+      "question_type": "visual_no_match",
+      "expected_status": "no_match",
+      "hit_at_3": null,
+      "candidates": [
+        {
+          "photo_id": "web-74f52d9aeeda1a74",
+          "cosine_distance": 0.4243295698558771,
+          "cosine_similarity": 0.5756704301441229,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-313e1d1d8adbb6dd",
+          "cosine_distance": 0.42650519925417896,
+          "cosine_similarity": 0.573494800745821,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-2f9982f85602dcfc",
+          "cosine_distance": 0.43024832010268765,
+          "cosine_similarity": 0.5697516798973123,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "dev-10",
+      "split": "dev",
+      "question_type": "visual_no_match",
+      "expected_status": "no_match",
+      "hit_at_3": null,
+      "candidates": [
+        {
+          "photo_id": "web-26fc75647476cbcb",
+          "cosine_distance": 0.44081804509054456,
+          "cosine_similarity": 0.5591819549094554,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-09371a5d2558988e",
+          "cosine_distance": 0.4408651923617517,
+          "cosine_similarity": 0.5591348076382483,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-4a66359fe24a45b4",
+          "cosine_distance": 0.4414792393756277,
+          "cosine_similarity": 0.5585207606243723,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-01",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-4f36537914870a76",
+          "cosine_distance": 0.3145011663436841,
+          "cosine_similarity": 0.6854988336563159,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-03feca342c94b3e6",
+          "cosine_distance": 0.37277511520533957,
+          "cosine_similarity": 0.6272248847946604,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-74f52d9aeeda1a74",
+          "cosine_distance": 0.3826736211776689,
+          "cosine_similarity": 0.6173263788223311,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-02",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-1383fec9a21a5092",
+          "cosine_distance": 0.33516562001397754,
+          "cosine_similarity": 0.6648343799860225,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-3a832d3f93c7b09b",
+          "cosine_distance": 0.4220500243932024,
+          "cosine_similarity": 0.5779499756067976,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-c73b9bc414e65858",
+          "cosine_distance": 0.4343801568263813,
+          "cosine_similarity": 0.5656198431736187,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-03",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-4924ca7cc1fa88ea",
+          "cosine_distance": 0.302104330313717,
+          "cosine_similarity": 0.697895669686283,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-d74edc76b2f5d774",
+          "cosine_distance": 0.4452395439147949,
+          "cosine_similarity": 0.5547604560852051,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-74f52d9aeeda1a74",
+          "cosine_distance": 0.44696172755728425,
+          "cosine_similarity": 0.5530382724427158,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-04",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-4a10bca9a2e0c539",
+          "cosine_distance": 0.34149487861960404,
+          "cosine_similarity": 0.658505121380396,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-74f52d9aeeda1a74",
+          "cosine_distance": 0.3972920832597089,
+          "cosine_similarity": 0.6027079167402911,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-6c050eafb02e8f56",
+          "cosine_distance": 0.40228634456219503,
+          "cosine_similarity": 0.597713655437805,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-05",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-c37a2ef9f34b0b86",
+          "cosine_distance": 0.33262805148195795,
+          "cosine_similarity": 0.667371948518042,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-eb2daef21e52cf83",
+          "cosine_distance": 0.4047141784770276,
+          "cosine_similarity": 0.5952858215229724,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-0e2286154d3accc1",
+          "cosine_distance": 0.4121446784691585,
+          "cosine_similarity": 0.5878553215308415,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-06",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-b561a5d97b455b55",
+          "cosine_distance": 0.36236321926116943,
+          "cosine_similarity": 0.6376367807388306,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-99d4972e4a489d73",
+          "cosine_distance": 0.41293954849243164,
+          "cosine_similarity": 0.5870604515075684,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-4a66359fe24a45b4",
+          "cosine_distance": 0.4194000613331821,
+          "cosine_similarity": 0.5805999386668179,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-07",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-1f6a789d9e6c81d4",
+          "cosine_distance": 0.3057069571526929,
+          "cosine_similarity": 0.6942930428473071,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-aaa5f5740ec05ed6",
+          "cosine_distance": 0.4040538909467394,
+          "cosine_similarity": 0.5959461090532606,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-2f9982f85602dcfc",
+          "cosine_distance": 0.4087579426539534,
+          "cosine_similarity": 0.5912420573460466,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-08",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-da5d1dee6f8d255c",
+          "cosine_distance": 0.3383374613028005,
+          "cosine_similarity": 0.6616625386971995,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-35edb097df7010c5",
+          "cosine_distance": 0.40254412301016196,
+          "cosine_similarity": 0.597455876989838,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-427b0ae9af023f7c",
+          "cosine_distance": 0.40758219912158156,
+          "cosine_similarity": 0.5924178008784184,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-16",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-006bd04371c8a8e3",
+          "cosine_distance": 0.28956214847790185,
+          "cosine_similarity": 0.7104378515220982,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-bab1f02119f648bc",
+          "cosine_distance": 0.40236850373838595,
+          "cosine_similarity": 0.597631496261614,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-941129a53f9e2486",
+          "cosine_distance": 0.4094162339320033,
+          "cosine_similarity": 0.5905837660679967,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-17",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-2b92a007e47324c0",
+          "cosine_distance": 0.33618664741516113,
+          "cosine_similarity": 0.6638133525848389,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-bab1f02119f648bc",
+          "cosine_distance": 0.43543933139560587,
+          "cosine_similarity": 0.5645606686043941,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-4a66359fe24a45b4",
+          "cosine_distance": 0.44552334818383044,
+          "cosine_similarity": 0.5544766518161696,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-18",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-4f6b316efcdd85a5",
+          "cosine_distance": 0.3512089461808757,
+          "cosine_similarity": 0.6487910538191243,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-6c050eafb02e8f56",
+          "cosine_distance": 0.35677848119862954,
+          "cosine_similarity": 0.6432215188013705,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-8e8c8fb71183cdc0",
+          "cosine_distance": 0.4102313166994631,
+          "cosine_similarity": 0.5897686833005369,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-19",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-8766aae68d5f2c89",
+          "cosine_distance": 0.3422067165374756,
+          "cosine_similarity": 0.6577932834625244,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-6c050eafb02e8f56",
+          "cosine_distance": 0.3760367779687863,
+          "cosine_similarity": 0.6239632220312137,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-d20896398f01791c",
+          "cosine_distance": 0.43710392713546753,
+          "cosine_similarity": 0.5628960728645325,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-20",
+      "split": "test",
+      "question_type": "visual_match",
+      "expected_status": "ok",
+      "hit_at_3": true,
+      "candidates": [
+        {
+          "photo_id": "web-49ee66fcdc185207",
+          "cosine_distance": 0.2947918948407098,
+          "cosine_similarity": 0.7052081051592902,
+          "is_labeled_relevant": true
+        },
+        {
+          "photo_id": "web-4a66359fe24a45b4",
+          "cosine_distance": 0.4079078922161927,
+          "cosine_similarity": 0.5920921077838073,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-ea772972c8513204",
+          "cosine_distance": 0.4274840100119016,
+          "cosine_similarity": 0.5725159899880984,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-26",
+      "split": "test",
+      "question_type": "visual_no_match",
+      "expected_status": "no_match",
+      "hit_at_3": null,
+      "candidates": [
+        {
+          "photo_id": "web-6c050eafb02e8f56",
+          "cosine_distance": 0.45161459715105245,
+          "cosine_similarity": 0.5483854028489475,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-43e80fa914f4a31c",
+          "cosine_distance": 0.45653572937633125,
+          "cosine_similarity": 0.5434642706236688,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-74f52d9aeeda1a74",
+          "cosine_distance": 0.4633055925369225,
+          "cosine_similarity": 0.5366944074630775,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-27",
+      "split": "test",
+      "question_type": "visual_no_match",
+      "expected_status": "no_match",
+      "hit_at_3": null,
+      "candidates": [
+        {
+          "photo_id": "web-42786397774ac626",
+          "cosine_distance": 0.4345238208770752,
+          "cosine_similarity": 0.5654761791229248,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-89bbd2a2bf32c53a",
+          "cosine_distance": 0.4583955456738975,
+          "cosine_similarity": 0.5416044543261025,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-313e1d1d8adbb6dd",
+          "cosine_distance": 0.4626556314620742,
+          "cosine_similarity": 0.5373443685379258,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-28",
+      "split": "test",
+      "question_type": "visual_no_match",
+      "expected_status": "no_match",
+      "hit_at_3": null,
+      "candidates": [
+        {
+          "photo_id": "web-bab1f02119f648bc",
+          "cosine_distance": 0.4339451025112001,
+          "cosine_similarity": 0.5660548974887999,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-313e1d1d8adbb6dd",
+          "cosine_distance": 0.46481618075467135,
+          "cosine_similarity": 0.5351838192453287,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-6c050eafb02e8f56",
+          "cosine_distance": 0.46673685708798307,
+          "cosine_similarity": 0.5332631429120169,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-29",
+      "split": "test",
+      "question_type": "visual_no_match",
+      "expected_status": "no_match",
+      "hit_at_3": null,
+      "candidates": [
+        {
+          "photo_id": "web-09371a5d2558988e",
+          "cosine_distance": 0.4563105054271823,
+          "cosine_similarity": 0.5436894945728177,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-bab1f02119f648bc",
+          "cosine_distance": 0.4613636250522991,
+          "cosine_similarity": 0.5386363749477009,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-313e1d1d8adbb6dd",
+          "cosine_distance": 0.4629798487400828,
+          "cosine_similarity": 0.5370201512599172,
+          "is_labeled_relevant": false
+        }
+      ]
+    },
+    {
+      "question_id": "test-30",
+      "split": "test",
+      "question_type": "visual_no_match",
+      "expected_status": "no_match",
+      "hit_at_3": null,
+      "candidates": [
+        {
+          "photo_id": "web-2f9982f85602dcfc",
+          "cosine_distance": 0.45988562942232813,
+          "cosine_similarity": 0.5401143705776719,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-aaa5f5740ec05ed6",
+          "cosine_distance": 0.462896271434315,
+          "cosine_similarity": 0.537103728565685,
+          "is_labeled_relevant": false
+        },
+        {
+          "photo_id": "web-27e6fc4086971fae",
+          "cosine_distance": 0.4744685888290405,
+          "cosine_similarity": 0.5255314111709595,
+          "is_labeled_relevant": false
+        }
+      ]
+    }
+  ],
+  "dataset": "bts-daily",
+  "model": "google/gemini-embedding-2",
+  "dimensions": 1536,
+  "corpus_size": 100
+}

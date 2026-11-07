@@ -1,0 +1,12 @@
+[Unit]
+Description=Vooy MCP 일일 백업
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/pc/projects/vooy-mcp
+ExecStart=/usr/bin/python3 /home/pc/projects/vooy-mcp/scripts/daily_backup.py
+ExecStopPost=/usr/bin/python3 /home/pc/projects/vooy-mcp/scripts/recover_backup.py
+TimeoutStartSec=infinity
+TimeoutStopSec=120
+

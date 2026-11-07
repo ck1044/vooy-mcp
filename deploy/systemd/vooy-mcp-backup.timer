@@ -1,0 +1,10 @@
+[Unit]
+Description=Vooy MCP 일일 백업 시간
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+Persistent=true
+Unit=vooy-mcp-backup.service
+
+[Install]
+WantedBy=timers.target

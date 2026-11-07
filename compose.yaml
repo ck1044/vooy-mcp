@@ -1,0 +1,100 @@
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.6-pg16
+    group_add:
+      - "1000"
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: vooy
+      POSTGRES_DB: vooy
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres-password
+    volumes:
+      - vooy-postgres:/var/lib/postgresql/data
+      - type: bind
+        source: ./.secrets/postgres-password
+        target: /run/secrets/postgres-password
+        read_only: true
+        bind:
+          create_host_path: false
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vooy -d vooy"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  vooy-mcp:
+    build: .
+    image: vooy-mcp:local
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3185:8000"
+    environment:
+      VOOY_MCP_HOST: 0.0.0.0
+      VOOY_MCP_PORT: "8000"
+      VOOY_MCP_TOKEN_FILE: /run/vooy-mcp/secrets/mcp-token
+      VOOY_MCP_EXTRA_TOKEN_DIR: /run/vooy-mcp/secrets
+      VOOY_MCP_EXTRA_HOSTS: ${VOOY_MCP_EXTRA_HOSTS:-}
+      VOOY_MCP_EXTRA_ORIGINS: ${VOOY_MCP_EXTRA_ORIGINS:-}
+      VOOY_DATABASE_URL: postgresql://vooy@postgres:5432/vooy
+      VOOY_DATABASE_PASSWORD_FILE: /run/vooy-mcp/secrets/postgres-password
+      VOOY_MEDIA_ROOT: /data/media
+      VOOY_PUBLIC_BASE_URL: ${VOOY_PUBLIC_BASE_URL:-http://127.0.0.1:3185}
+      VOOY_RAG_WORKER_TOKEN_FILE: /run/vooy-mcp/secrets/rag-worker-token
+      VOOY_RAG_QUERY_URL: ${VOOY_RAG_QUERY_URL:-}
+      VOOY_RAG_QUERY_TOKEN_FILE: ${VOOY_RAG_QUERY_TOKEN_FILE:-}
+      VOOY_OPENROUTER_API_KEY_FILE: ${VOOY_OPENROUTER_API_KEY_FILE:-}
+      VOOY_EMBEDDING_MODEL: ${VOOY_EMBEDDING_MODEL:-google/gemini-embedding-2}
+      VOOY_EMBEDDING_DIMENSIONS: ${VOOY_EMBEDDING_DIMENSIONS:-1536}
+      VOOY_EMBEDDING_PROVIDER: ${VOOY_EMBEDDING_PROVIDER:-}
+      VOOY_EMBEDDING_SPACE_ID: ${VOOY_EMBEDDING_SPACE_ID:-}
+      VOOY_RAG_PIPELINE_REVISION: ${VOOY_RAG_PIPELINE_REVISION:-openrouter-image-v1}
+    volumes:
+      - type: bind
+        source: ./.secrets
+        target: /run/vooy-mcp/secrets
+        read_only: true
+      - type: bind
+        source: ${VOOY_MEDIA_HOST_PATH:-/mnt/d/VOOY/media}
+        target: /data/media
+        bind:
+          create_host_path: false
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "from urllib.request import urlopen; urlopen('http://127.0.0.1:8000/healthz', timeout=2).close()"
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  rag-worker:
+    profiles: ["rag"]
+    build: .
+    image: vooy-mcp:local
+    restart: unless-stopped
+    depends_on:
+      vooy-mcp:
+        condition: service_healthy
+    command: ["python", "-m", "vooy_storage.image_worker"]
+    environment:
+      VOOY_WORKER_BASE_URL: http://vooy-mcp:8000
+      VOOY_RAG_WORKER_TOKEN_FILE: /run/vooy-mcp/secrets/rag-worker-token
+      VOOY_OPENROUTER_API_KEY_FILE: /run/vooy-mcp/secrets/openrouter-api-key
+      VOOY_EMBEDDING_SPACE_ID: ${VOOY_EMBEDDING_SPACE_ID:-}
+      VOOY_EMBEDDING_MODEL: ${VOOY_EMBEDDING_MODEL:-google/gemini-embedding-2}
+      VOOY_EMBEDDING_DIMENSIONS: ${VOOY_EMBEDDING_DIMENSIONS:-1536}
+      VOOY_EMBEDDING_PROVIDER: ${VOOY_EMBEDDING_PROVIDER:-}
+      VOOY_RAG_PIPELINE_REVISION: ${VOOY_RAG_PIPELINE_REVISION:-openrouter-image-v1}
+    volumes:
+      - type: bind
+        source: ./.secrets
+        target: /run/vooy-mcp/secrets
+        read_only: true
+
+volumes:
+  vooy-postgres:
